@@ -12,6 +12,7 @@ from scipy import ndimage
 from pyproj import Geod
 
 from spill_geometry import get_spill_geometry
+from origin_estimator import estimate_origin
 # ============================================================
 # MODEL
 # ============================================================
@@ -694,7 +695,15 @@ def detect_oil(
             cleaned_prediction,
             1
         )
+    # ========================================================
+    # SPILL ORIGIN ESTIMATION
+    # ========================================================
 
+    origin = estimate_origin(
+        cleaned_prediction,
+        transform_obj,
+        src_crs
+    )
     # ========================================================
     # RESULT
     # ========================================================
@@ -808,6 +817,8 @@ def detect_oil(
                 int(MIN_COMPONENT_SIZE)
         },
         "geometry": geometry,
+                
+        "origin": origin,
 
         "output": {
 

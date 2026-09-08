@@ -40,3 +40,52 @@ print("Height (pixels):",
       result["geometry"]["shape"]["height_pixels"])
 
 print("====================================")
+
+print("\n========== SPILL ORIGIN ==========")
+
+origin = result["origin"]
+
+print("Available:",
+      origin["available"])
+
+print("Method:",
+      origin["method"])
+
+if origin["available"]:
+
+    center = origin["spill_center"]
+
+    print("\nSpill Center:")
+    print("Latitude:",
+          center["latitude"])
+    print("Longitude:",
+          center["longitude"])
+
+    axis = origin["principal_axis"]
+
+    print("\nPrincipal Axis:")
+    print("Orientation:",
+          axis["orientation_degrees"],
+          "degrees")
+
+    print("Length:",
+          axis["length_pixels"],
+          "pixels")
+
+    for candidate in origin["candidates"]:
+
+        print(
+            f"\nCandidate Origin {candidate['candidate_id']}:"
+        )
+
+        print(
+            "Latitude:",
+            candidate["latitude"]
+        )
+
+        print(
+            "Longitude:",
+            candidate["longitude"]
+        )
+
+print("==================================")
