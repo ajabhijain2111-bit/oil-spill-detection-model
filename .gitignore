@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+*.tif
+*.tiff
+oil_spill_prediction.tif
+oil_spill_report.json
