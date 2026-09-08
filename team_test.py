@@ -21,3 +21,22 @@ print("Area:",
       "km²")
 
 print("===========================================")
+
+print("\n========== SPILL GEOMETRY ==========")
+
+print("Area (pixels):",
+      result["geometry"]["shape"]["area_pixels"])
+
+print("Perimeter (pixels):",
+      result["geometry"]["shape"]["perimeter_pixels"])
+
+print("Orientation (degrees):",
+      result["geometry"]["shape"]["orientation_degrees"])
+
+print("Width (pixels):",
+      result["geometry"]["shape"]["width_pixels"])
+
+print("Height (pixels):",
+      result["geometry"]["shape"]["height_pixels"])
+
+print("====================================")

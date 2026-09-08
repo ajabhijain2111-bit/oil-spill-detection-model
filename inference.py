@@ -11,7 +11,7 @@ from rasterio.warp import transform
 from scipy import ndimage
 from pyproj import Geod
 
-
+from spill_geometry import get_spill_geometry
 # ============================================================
 # MODEL
 # ============================================================
@@ -698,7 +698,7 @@ def detect_oil(
     # ========================================================
     # RESULT
     # ========================================================
-
+    geometry = get_spill_geometry(cleaned_prediction)
     result = {
 
         "model":
@@ -807,6 +807,7 @@ def detect_oil(
             "minimum_area":
                 int(MIN_COMPONENT_SIZE)
         },
+        "geometry": geometry,
 
         "output": {
 
